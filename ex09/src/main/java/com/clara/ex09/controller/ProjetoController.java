@@ -28,7 +28,7 @@ public class ProjetoController {
     @PostMapping
     ResponseEntity<ProjetoModel> criarProjeto(@RequestBody ProjetoModel projeto) {
         ProjetoModel requeste = projetoService.criarProjeto(projeto);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(departamento.getId()).toUri();
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(projeto.getId()).toUri();
         return ResponseEntity.created(uri).body(requeste);
     }
 
